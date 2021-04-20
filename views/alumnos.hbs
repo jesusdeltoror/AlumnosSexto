@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="data">
+        <table>
+            <tr>
+                <th>MATRICULA</th>
+                <th>NOMBRE</th>
+                <th>P1</th>
+                <th>P2</th>
+                <th>P3</th>
+                <th>P4</th>
+                <th>EXAMEN</th>
+                <th>CALIFICACION</th>
+                <th>OPTIONS</th>
+            </tr>
+            {{#each Alum}}
+                <tr>
+                    <td>{{this.matricula}}</td>
+                    <td>{{this.nombre}}</td>
+                    <td>{{this.p1}}</td>
+                    <td>{{this.p2}}</td>
+                    <td>{{this.p3}}</td>
+                    <td>{{this.p4}}</td>
+                    <td>{{this.examen}}</td>
+                    <td>{{this.calificacion}}</td>
+                    <td><span onclick="update({{this._id}},'{{this.matricula}}','{{this.nombre}}','{{this.p1}}','{{this.p2}}','{{this.p3}}','{{this.p4}}','{{this.examen}}')">Update</span></td>
+                    <td><a href="alumnos6/delete/{{this._id}}">Delete</a></td>
+                </tr>
+            {{/each}}
+        </table>
+    </div>
+
+    {{!-- Formulario Insert --}}
+    <div id="cont_insert" class="cont insert">
+        <form action="/alumnos6/insert" method="POST" id="form-insert" class="form">
+            
+            <label for="matricula">Matricula</label>
+            <input type="text" name="matricula" id="matricula" required>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <label for="p1">P1</label>
+            <input type="number" name="p1" id="p1">
+            <label for="p2">P2</label>
+            <input type="number" name="p2" id="p2">
+            <label for="p3">P3</label>
+            <input type="number" name="p3" id="p3">
+            <label for="p4">P4</label>
+            <input type="number" name="p4" id="p4">
+            <label for="examen">Examen</label>
+            <input type="number" name="examen" id="examen">    
+            
+            <input type="submit" value="Insert">
+            </form>
+    </div>
+
+    {{!-- Formulario Update --}}
+    <div id="cont_update" class="cont update">
+        <form action="/alumnos6/update" method="POST" id="form-update" class="form">
+            <input type="text" name="_id" id="u_id" hidden>
+            <label for="matricula">Matricula</label>
+            <input type="text" name="matricula" id="umatricula" required>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="unombre">
+            <label for="p1">P1</label>
+            <input type="number" name="p1" id="up1">
+            <label for="p2">P2</label>
+            <input type="number" name="p2" id="up2">
+            <label for="p3">P3</label>
+            <input type="number" name="p3" id="up3">
+            <label for="p4">P4</label>
+            <input type="number" name="p4" id="up4">
+            <label for="examen">Examen</label>
+            <input type="number" name="examen" id="uexamen">   
+            <input type="number" name="calificacion" id="ucalificacion" hidden>   
+
+            <input type="submit" value="Update">
+            </form>
+    </div>
+    
+    
+
+    <script src="./javascripts/alum.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font: 14px "roboto", Helvetica, Arial, sans-serif;
+  display: grid;
+  justify-items: center;
+}
+
+table{
+  background-color: rgb(39, 39, 39);
+  color: #fff;
+}
+ 
+  td{
+    width: 9vw;
+    background-color: rgb(63, 62, 62);
+  }
+  a{
+    color: #fff;
+    text-decoration: none;
+  }
+
+.cont{
+  width: 30vw;
+  height: 35vh;
+  display: grid;
+  justify-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 2px black;
+}
+  .form{
+    width: 30vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(8,1fr);
+    justify-items: center;
+    align-items: center;
+  }
